@@ -30,13 +30,14 @@
 
                       <tr>
                         <td><?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                        <td>R$ <?php echo htmlspecialchars( $value1["valor_total"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                        <td><?php echo htmlspecialchars( $value1["data_cadastro"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                        <td>R$ <?php echo formatPrice($value1["valor_total"]); ?></td>
+                        <td><?php echo formatDate($value1["data_cadastro"]); ?></td>
                         <td><?php echo htmlspecialchars( $value1["cliente"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td><?php echo htmlspecialchars( $value1["status"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td>
                           <a href="./order/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Atualizar Status do Pedido</a>
-                          <a href="./order/address/<?php echo htmlspecialchars( $value1["endereco_id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Endereco para Entrega</a>
+                          <a href="./order/address/<?php echo htmlspecialchars( $value1["endereco_id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Endereço para Entrega</a>
+                          <a href="./order/products/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Itens do Pedido</a>
                           <a href="./order/delete/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                         </td>
                       </tr>

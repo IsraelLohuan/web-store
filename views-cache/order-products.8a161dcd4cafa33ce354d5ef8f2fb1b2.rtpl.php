@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Produtos
+        Itens do Pedido
       </h1>
     </section>
     
@@ -14,18 +14,16 @@
           <div class="col-md-12">
               <div class="box box-primary">
                 
-                <div class="box-header">
-                  <a href="./product/create" class="btn btn-success">Cadastrar Produto</a>
-                </div>
-    
                 <div class="box-body no-padding">
                   <table class="table table-striped">
                     <thead>
                       <tr>
                         <th style="width: 10px">#</th>
                         <th>Produto</th>
-                        <th>Preco</th>
-                        <th>Destaque</th>
+                        <th>Preço</th>
+                        <th>Desconto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Total</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -35,11 +33,9 @@
                         <td><?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td><?php echo htmlspecialchars( $value1["titulo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         <td>R$ <?php echo formatPrice($value1["preco"]); ?></td>
-                        <td><?php if( $value1["destaque"] == 1 ){ ?>Sim<?php }else{ ?>Não<?php } ?></td>
-                        <td>
-                          <a href="./product/edit/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                          <a href="./product/delete/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                        </td>
+                        <td>R$ <?php echo formatPrice($value1["desconto"]); ?></td>
+                        <td><?php echo htmlspecialchars( $value1["quantidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                        <td>R$ <?php echo formatPrice($value1["preco"] - $value1["desconto"] * $value1["quantidade"]); ?></td>
                       </tr>
                       <?php } ?>
 

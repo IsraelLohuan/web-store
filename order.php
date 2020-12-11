@@ -42,6 +42,24 @@ $app->get("/admin/order/address/{id}", function($request) {
     ]);
 });
 
+$app->get("/admin/order/products/{id}", function($request) {
+
+    User::verifyLogin();
+
+    $order = new Order();
+
+    $page = new Page();
+
+    $id = $request->getAttribute("id");
+
+    $items = $order->getOrderByID($id)["items"];
+
+    $page->setTpl("order-products", [
+        "products" => $items
+    ]);
+});
+
+
 $app->get("/admin/order/{id}", function($request) {
 
     User::verifyLogin();

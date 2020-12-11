@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Pedidos
+        Itens do Pedido
       </h1>
     </section>
     
@@ -19,26 +19,22 @@
                     <thead>
                       <tr>
                         <th style="width: 10px">#</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Desconto</th>
+                        <th>Quantidade</th>
                         <th>Valor Total</th>
-                        <th>Data Cadastro</th>
-                        <th>Cliente</th>
-                        <th>Status Atual</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {loop="$orders"}
+                      {loop="$products"}
                       <tr>
                         <td>{$value.id}</td>
-                        <td>R$ {function="formatPrice($value.valor_total)"}</td>
-                        <td>{function="formatDate($value.data_cadastro)"}</td>
-                        <td>{$value.cliente}</td>
-                        <td>{$value.status}</td>
-                        <td>
-                          <a href="./order/{$value.id}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Atualizar Status do Pedido</a>
-                          <a href="./order/address/{$value.endereco_id}" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Endereço para Entrega</a>
-                          <a href="./order/products/{$value.id}" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> Itens do Pedido</a>
-                          <a href="./order/delete/{$value.id}" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                        </td>
+                        <td>{$value.titulo}</td>
+                        <td>R$ {function="formatPrice($value.preco)"}</td>
+                        <td>R$ {function="formatPrice($value.desconto)"}</td>
+                        <td>{$value.quantidade}</td>
+                        <td>R$ {function="formatPrice($value.preco - $value.desconto * $value.quantidade)"}</td>
                       </tr>
                       {/loop}
                     </tbody>
