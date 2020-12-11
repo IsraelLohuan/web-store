@@ -22,6 +22,14 @@ $app->get('/admin/login', function() {
 	$page->setTpl("login", ["error" => User::getError()]);
 });
 
+$app->get('/admin/logout', function() {
+    
+	User::logout();
+
+	header("Location: /store-web/admin/dashboard");
+	exit;
+});
+
 $app->post('/admin/login', function() {
 
     (new User())->login($_POST["login"], $_POST["password"]);

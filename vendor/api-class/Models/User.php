@@ -149,6 +149,11 @@ class User extends Api
         $_SESSION[User::$userLogged] = $user;
     }
 
+    public static function logout()
+    {
+        unset($_SESSION[User::$userLogged]);
+    }
+
     public static function setError($error) 
     {
         $_SESSION[User::$errorLogin] = $error;

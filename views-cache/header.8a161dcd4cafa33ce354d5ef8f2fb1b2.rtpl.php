@@ -63,7 +63,7 @@ desired effect
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>G</b>AL</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Gerencial</b></span>
     </a>
@@ -79,39 +79,8 @@ desired effect
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
         
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="/admin/logout" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="http://localhost/store-web/admin/logout" ><i class="fa fa-sign-out"></i></a>
           </li>
         </ul>
       </div>

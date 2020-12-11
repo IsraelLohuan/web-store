@@ -89,7 +89,7 @@ class Order extends Api
         $mailer = new Mailer(
             $order['email'], 
             $order['cliente'], 
-            "Altualização de pedido", 
+            "Atualização de pedido", 
             "status_order_update",
             array("name" => $order["cliente"], "status" => $this->getOrderByID($id)["status"])
         );				
