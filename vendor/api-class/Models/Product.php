@@ -61,6 +61,7 @@ class Product extends Api
             $product["masculino"] = $data["masculino"];
             $product["produto_categoria_id"] = $data["produto_categoria_id"];
             $product["titulo"] = $data["titulo"];
+            $product["url_image"] = $data["url_image"];
         }
 
         $response = $this->client->request("PUT", parent::BASE_URI . "product", [
@@ -74,7 +75,7 @@ class Product extends Api
                 "masculino" => $product["masculino"],
                 "produto_categoria_id" => $product["produto_categoria_id"],
                 "titulo" => $product["titulo"],
-                "filename" => $product["filename"],
+                "url_image" => $product["url_image"],
             ],
             ["decode_content" => false]
         ]);
@@ -101,7 +102,7 @@ class Product extends Api
                 "masculino" => $data["masculino"],
                 "produto_categoria_id" => $data["produto_categoria_id"],
                 "titulo" => $data["titulo"],
-                "filename" => "default.png"
+                "url_image" => $data["url_image"]
             ],
             ["decode_content" => false]
         ]);

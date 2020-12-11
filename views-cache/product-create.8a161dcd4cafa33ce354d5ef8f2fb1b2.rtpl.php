@@ -36,6 +36,11 @@
                     <label for="desperson">Desconto</label>
                     <input type="text" class="form-control" id="desconto" name="desconto" placeholder="Desconto"  required>
                 </div>
+                <div class="form-group">
+                  <label for="desperson">URL (Imagem do Produto)</label>
+                  <input type="text" class="form-control" id="url_image" name="url_image" placeholder="URL" required>
+                </div>
+                <label for="desperson">Categoria</label>
                 <select class="form-control select2" style="width: 100%;" id="produto_categoria_id" name="produto_categoria_id">
                   <?php $counter1=-1;  if( isset($categories) && ( is_array($categories) || $categories instanceof Traversable ) && sizeof($categories) ) foreach( $categories as $key1 => $value1 ){ $counter1++; ?>
 
