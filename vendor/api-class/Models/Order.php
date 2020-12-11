@@ -3,6 +3,7 @@
 namespace Application\Models;
 
 use Application\Models\Api;
+use \Application\Mailer;
 
 class Order extends Api
 {
@@ -84,6 +85,16 @@ class Order extends Api
             ],
             ["decode_content" => false]
         ]);
+
+        $mailer = new Mailer(
+            $order['email'], 
+            $order['cliente'], 
+            "Altualização de pedido", 
+            "status_order_update",
+            array("name" => $order["cliente"], "status" => $this->getOrderByID($id)["status"])
+        );				
+
+        $mailer->send();
 
         return $response->getStatusCode() == 200;
     }
