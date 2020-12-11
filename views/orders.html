@@ -1,0 +1,61 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Lista de Pedidos
+      </h1>
+    </section>
+    
+    <!-- Main content -->
+    <section class="content">
+    
+      <div class="row">
+          <div class="col-md-12">
+              <div class="box box-primary">
+                
+                <div class="box-body no-padding">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Valor Total</th>
+                        <th>Data Cadastro</th>
+                        <th>Cliente</th>
+                        <th>Status Atual</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {loop="$orders"}
+                      <tr>
+                        <td>{$value.id}</td>
+                        <td>{$value.valor_total}</td>
+                        <td>{$value.data_cadastro}</td>
+                        <td>{$value.cliente}</td>
+                        <td>{$value.status}</td>
+                        <td>
+                          <a href="./order/{$value.id}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Atualizar Status do Pedido</a>
+                          <a href="./order/address/{$value.endereco_id}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Endereco para Entrega</a>
+                          <a href="./order/delete/{$value.id}" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                        </td>
+                      </tr>
+                      {/loop}
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                    {loop="$pages"}
+                    <li><a href="{$value.href}">{$value.text}</a></li>
+                    {/loop}
+                  </ul>
+                </div>
+              </div>
+          </div>
+      </div>
+    
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->

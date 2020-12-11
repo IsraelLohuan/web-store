@@ -1,0 +1,46 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Lista de Pedidos
+      </h1>
+    </section>
+    
+    <!-- Main content -->
+    <section class="content">
+    
+      <div class="row">
+          <div class="col-md-12">
+              <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Editar Status do Pedido</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" action="http://localhost/store-web/admin/order/edit/{$order_id}" method="post">
+              <div class="box-body">
+                <div class="form-group">
+
+                    <label>Novo Status</label>
+                    <select class="form-control select2" style="width: 100%;" id="status_pedido_id" name="status_pedido_id">
+                        {loop="$status"}
+                            <option value="{$value.id}" {if="$status_id_atual == $value.id"}selected{/if}>{$value.status}</option>
+                        {/loop}
+                    </select>
+                    
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-success">Atualizar</button>
+              </div>
+            </form>
+          </div>
+          </div>
+      </div>
+    
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
